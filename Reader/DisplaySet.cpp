@@ -211,12 +211,15 @@ static INT_PTR CALLBACK DisplaySetDlgProc(HWND hDlg, UINT message, WPARAM wParam
         case IDC_CHECK_MENU_FONT:
             res = (int)SendMessage(GetDlgItem(hDlg, IDC_CHECK_MENU_FONT), BM_GETCHECK, 0, NULL);
             _display.meun_font_follow = BST_CHECKED == res ? 1 : 0;
+            break;
         case IDC_CHECK_WORD_WRAP:
             res = (int)SendMessage(GetDlgItem(hDlg, IDC_CHECK_WORD_WRAP), BM_GETCHECK, 0, NULL);
             _display.word_wrap = BST_CHECKED == res ? 1 : 0;
+            break;
         case IDC_CHECK_INDENT:
             res = (int)SendMessage(GetDlgItem(hDlg, IDC_CHECK_INDENT), BM_GETCHECK, 0, NULL);
             _display.line_indent = BST_CHECKED == res ? 1 : 0;
+            break;
         case IDC_CHECK_BLANKLINES:
             res = (int)SendMessage(GetDlgItem(hDlg, IDC_CHECK_BLANKLINES), BM_GETCHECK, 0, NULL);
             _display.blank_lines = BST_CHECKED == res ? 1 : 0;
@@ -224,6 +227,7 @@ static INT_PTR CALLBACK DisplaySetDlgProc(HWND hDlg, UINT message, WPARAM wParam
         case IDC_CHECK_CHAPTER_PAGE:
             res = (int)SendMessage(GetDlgItem(hDlg, IDC_CHECK_CHAPTER_PAGE), BM_GETCHECK, 0, NULL);
             _display.chapter_page = BST_CHECKED == res ? 1 : 0;
+            break;
         default:
             break;
         }
@@ -603,9 +607,9 @@ static void _update_bg_rgb(HWND hDlg)
 
 static void _update_preview(HDC hDC, RECT *p_rc)
 {
-    const TCHAR* TEXT_CPT1 = _T("±êÌâÔ¤ÀÀ");
+    const TCHAR* TEXT_CPT1 = _T("æ ‡é¢˜é¢„è§ˆ");
     const TCHAR* TEXT_CPT2 = _T("Title preview");
-    const TCHAR* TEXT1 = _T("ÕýÎÄÔ¤ÀÀ\r\n");
+    const TCHAR* TEXT1 = _T("æ­£æ–‡é¢„è§ˆ\r\n");
     const TCHAR* TEXT2 = _T("Text preview");
 
     HDC memdc;
